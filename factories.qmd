@@ -206,6 +206,10 @@ def show_diff(diff):
         summary = summary + "**"+i.value+"**: "+str(diff[i])+"\n\n"
     return summary
 
+import pandas as pd
+
+#f = pd.DataFrame.from_dict(diff_c_p, orient='index', columns=["name"])
+#print(df.to_markdown(index=False))
 print(show_diff(diff_c_p))
 ```
 
