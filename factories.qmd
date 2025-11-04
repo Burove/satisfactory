@@ -134,8 +134,50 @@ def show_production_rates(production_rates):
 ```{python}
 #| echo: false
 #| output: asis
-print(show_production_rates(get_production_rates(production_on_floor, production_floors)))
+
+production_rates = get_production_rates(production_on_floor, production_floors)
+
+print(show_production_rates(production_rates))
 ```
+
+
+```{python}
+#| echo: false
+#| output: asis
+def item_consumption_rate(item, count):
+    cons_rate = {}
+    for ing in recipes[item]:
+        cons_rate[ing] = recipes[item][ing]*count
+    return cons_rate
+
+def consumption_rate(production_on_floor, production_floors):
+    cons_rates = {}
+    for item in production_on_floor:
+        cons_rates[item] = item_consumption_rate(item, production_on_floor[item]*production_floors[item])
+    return cons_rates
+
+def show_recipe(recipe):
+    summary = ""
+    for i in recipe:
+        summary = summary + " " + i.value +": "+ str(recipe[i]) + " "
+    return summary
+
+def show_cons_rate(cons_rates):
+    summary = ""
+    for i in cons_rates:
+        summary = summary + "**"+i.value +"**"+ "| " + show_recipe(cons_rates[i]) + "\n\n"
+    return summary
+
+print(show_cons_rate(consumption_rate(production_on_floor, production_floors)))
+```
+
+
+
+
+
+
+
+
 
 ```{python}
 #| echo: false

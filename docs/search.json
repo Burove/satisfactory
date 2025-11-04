@@ -32,13 +32,13 @@
     "href": "Factories.html",
     "title": "",
     "section": "",
-    "text": "Iron rod: 360\nIron plate: 240\nSteel beam: 120\nSteel pipe: 160\nEncased industrial beam: 24\nScrews: 640\nReinforced iron plate: 20\nSmart plating: 8\nStator: 40\nRotor: 16\nModular frame: 16\nVersatile Framework: 20\nAutomated Wiring: 10.0\nMotor: 20"
+    "text": "Iron rod: 360\nIron plate: 240\nSteel beam: 120\nSteel pipe: 160\nEncased industrial beam: 24\nScrews: 640\nReinforced iron plate: 20\nSmart plating: 8\nStator: 40\nRotor: 16\nModular frame: 16\nVersatile Framework: 20\nAutomated Wiring: 10.0\nMotor: 20\nIron rod| Iron ingot: 360\nIron plate| Iron ingot: 360\nSteel beam| Steel ingot: 480\nSteel pipe| Steel ingot: 240\nEncased industrial beam| Steel beam: 72 Concrete: 144\nScrews| Iron rod: 160\nReinforced iron plate| Iron plate: 120 Screws: 240\nSmart plating| Reinforced iron plate: 8 Rotor: 8\nStator| Steel pipe: 120 Wire: 320\nRotor| Iron plate: 80 Screws: 400\nModular frame| Reinforced iron plate: 24 Iron rod: 96\nVersatile Framework| Modular frame: 10.0 Steel beam: 120\nAutomated Wiring| Stator: 10.0 Cable: 200\nMotor| Stator: 20 Rotor: 20"
   },
   {
     "objectID": "Factories.html#megafactory",
     "href": "Factories.html#megafactory",
     "title": "",
     "section": "",
-    "text": "Iron rod: 360\nIron plate: 240\nSteel beam: 120\nSteel pipe: 160\nEncased industrial beam: 24\nScrews: 640\nReinforced iron plate: 20\nSmart plating: 8\nStator: 40\nRotor: 16\nModular frame: 16\nVersatile Framework: 20\nAutomated Wiring: 10.0\nMotor: 20"
+    "text": "Iron rod: 360\nIron plate: 240\nSteel beam: 120\nSteel pipe: 160\nEncased industrial beam: 24\nScrews: 640\nReinforced iron plate: 20\nSmart plating: 8\nStator: 40\nRotor: 16\nModular frame: 16\nVersatile Framework: 20\nAutomated Wiring: 10.0\nMotor: 20\nIron rod| Iron ingot: 360\nIron plate| Iron ingot: 360\nSteel beam| Steel ingot: 480\nSteel pipe| Steel ingot: 240\nEncased industrial beam| Steel beam: 72 Concrete: 144\nScrews| Iron rod: 160\nReinforced iron plate| Iron plate: 120 Screws: 240\nSmart plating| Reinforced iron plate: 8 Rotor: 8\nStator| Steel pipe: 120 Wire: 320\nRotor| Iron plate: 80 Screws: 400\nModular frame| Reinforced iron plate: 24 Iron rod: 96\nVersatile Framework| Modular frame: 10.0 Steel beam: 120\nAutomated Wiring| Stator: 10.0 Cable: 200\nMotor| Stator: 20 Rotor: 20"
   }
 ]
