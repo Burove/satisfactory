@@ -1,0 +1,12 @@
+{
+  "hash": "7002cb77319c9045aa323f78d2f4bd95",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Заводы\"\n#filters: [remove_title.lua]\n---\n\n\n\n::: {#fd86b1a6 .cell execution_count=2}\n\n::: {.cell-output .cell-output-stdout}\n```\nPROD\niron_rod\t360\niron_plate\t240\nscrews\t640\nreinforced_iron_plate\t40\nrotor\t16\nmodular_frame\t16\n\nCONS\niron_rod\t{'iron_ingot': 360}\niron_plate\t{'iron_ingot': 360}\nscrews\t{'iron_rod': 160}\nreinforced_iron_plate\t{'iron_plate': 240, 'screws': 480}\nrotor\t{'iron_rod': 80, 'screws': 400}\nmodular_frame\t{'reinforced_iron_plate': 24, 'iron_rod': 96}\n\n iron_rod\nNeed\t336\nProduction\t360\nConsumption\t{'iron_ingot': 360}\nAvailable\t24\n\n iron_plate\nNeed\t240\nProduction\t240\nConsumption\t{'iron_ingot': 360}\nAvailable\t0\n\n reinforced_iron_plate\nNeed\t24\nProduction\t40\nConsumption\t{'iron_plate': 240, 'screws': 480}\nAvailable\t16\n\n modular_frame\nNeed\t0\nProduction\t16\nConsumption\t{'reinforced_iron_plate': 24, 'iron_rod': 96}\nAvailable\t16\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "factories_files\\figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

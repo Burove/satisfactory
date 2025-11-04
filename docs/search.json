@@ -103,5 +103,12 @@
     "title": "Добыча ресурсов",
     "section": "",
     "text": "Iron  Normal x6\nLimestone  Normal x1\n\n\n\nLimestone  Normal x1\n\n\n\nCopper  Normal x2\n\n\n\nCopper  Pure x4\n\n\n\nCoal  Normal x2\nCoal  Impure x2\n\n\n\nCaterium  Pure x2\n\n\n\nCoal  Normal x2\n\n\n\nQuartz  Pure x2\nSAM  Normal x1\n\n\n\nIron  Pure x3\n\n\n\nCoal  Pure x3"
+  },
+  {
+    "objectID": "factories.html",
+    "href": "factories.html",
+    "title": "Заводы",
+    "section": "",
+    "text": "PROD\niron_rod    360\niron_plate  240\nscrews  640\nreinforced_iron_plate   40\nrotor   16\nmodular_frame   16\n\nCONS\niron_rod    {'iron_ingot': 360}\niron_plate  {'iron_ingot': 360}\nscrews  {'iron_rod': 160}\nreinforced_iron_plate   {'iron_plate': 240, 'screws': 480}\nrotor   {'iron_rod': 80, 'screws': 400}\nmodular_frame   {'reinforced_iron_plate': 24, 'iron_rod': 96}\n\n iron_rod\nNeed    336\nProduction  360\nConsumption {'iron_ingot': 360}\nAvailable   24\n\n iron_plate\nNeed    240\nProduction  240\nConsumption {'iron_ingot': 360}\nAvailable   0\n\n reinforced_iron_plate\nNeed    24\nProduction  40\nConsumption {'iron_plate': 240, 'screws': 480}\nAvailable   16\n\n modular_frame\nNeed    0\nProduction  16\nConsumption {'reinforced_iron_plate': 24, 'iron_rod': 96}\nAvailable   16"
   }
 ]

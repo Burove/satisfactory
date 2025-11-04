@@ -1,0 +1,242 @@
+---
+title: "Заводы"
+filters: [remove_title.lua]
+---
+
+
+```{python}
+#| echo: false
+from enum import Enum
+
+class Item(Enum):
+    Iron_ingot = "Iron ingot"
+    Copper_ingot = "Copper ingot"
+    Steel_ingot = "Steel ingot" 
+    Concrete = "Concrete"
+    Wire = "Wire"
+    Cable = "Cable"
+    Iron_rod = "Iron rod"
+    Iron_plate = "Iron plate"
+    Screws = "Screws"
+    Reinforced_iron_plate = "Reinforced iron plate"
+    Rotor = "Rotor"
+    Modular_frame = "Modular frame"
+    Steel_beam = "Steel beam"
+    Steel_pipe = "Steel pipe" 
+    Encased_industrial_beam = "Encased industrial beam"
+    Stator = "Stator"
+    Smart_plating = "Smart plating"
+    Versatile_framework = "Versatile Framework"
+    Automated_wiring = "Automated Wiring"
+    Motor = "Motor"
+
+production_rate = {
+    Item.Iron_ingot : 30,
+    Item.Copper_ingot : 30,
+    Item.Wire : 30,
+    Item.Cable : 30,
+    Item.Concrete : 15,
+    Item.Steel_ingot : 30,
+    Item.Iron_rod : 15,
+    Item.Iron_plate : 20,
+    Item.Screws : 40,
+    Item.Reinforced_iron_plate : 5,
+    Item.Rotor : 4,
+    Item.Modular_frame : 2,
+    Item.Steel_beam : 15,
+    Item.Steel_pipe : 20,
+    Item.Encased_industrial_beam : 6,
+    Item.Stator : 5,
+    Item.Smart_plating : 2,
+    Item.Versatile_framework : 5,
+    Item.Automated_wiring : 2.5,
+    Item.Motor : 10,
+}
+
+
+recipes = {
+    Item.Wire: {Item.Copper_ingot: 15},
+    Item.Iron_ingot: {},
+    Item.Steel_ingot: {},
+    Item.Concrete: {},
+    Item.Cable: {Item.Wire: 60},
+    Item.Iron_rod: {Item.Iron_ingot:15},
+    Item.Iron_plate: {Item.Iron_ingot:30},
+    Item.Screws: {Item.Iron_rod:10},
+    Item.Reinforced_iron_plate: {Item.Iron_plate: 30, Item.Screws:60},
+    Item.Rotor: {Item.Iron_plate: 20, Item.Screws:100},
+    Item.Modular_frame: {Item.Reinforced_iron_plate:3, Item.Iron_rod:12},
+    Item.Steel_beam: {Item.Steel_ingot: 60},
+    Item.Steel_pipe: {Item.Steel_ingot: 30},
+    Item.Encased_industrial_beam: {Item.Steel_beam: 18, Item.Concrete: 36},
+    Item.Stator: {Item.Steel_pipe: 15, Item.Wire: 40},
+    Item.Smart_plating: {Item.Reinforced_iron_plate: 2, Item.Rotor: 2},
+    Item.Versatile_framework: {Item.Modular_frame: 2.5, Item.Steel_beam: 30},
+    Item.Automated_wiring: {Item.Stator: 2.5, Item.Cable: 50},
+    Item.Motor: {Item.Stator: 10, Item.Rotor: 10}
+}
+
+```
+
+
+## MegaFactory
+```{python}
+#| echo: false
+
+production_on_floor = {
+    Item.Iron_rod: 4,
+    Item.Iron_plate: 4,
+    Item.Screws: 4,
+    Item.Reinforced_iron_plate: 4,
+    Item.Rotor: 4,
+    Item.Modular_frame: 4
+}
+
+production_floors = {
+    Item.Iron_rod: 6,
+    Item.Iron_plate: 3,
+    Item.Screws: 4,
+    Item.Reinforced_iron_plate: 2,
+    Item.Rotor: 1,
+    Item.Modular_frame: 1
+}
+
+def get_production_rates(on_floor, floors):
+    production_rates = {}
+    for item in on_floor:
+        production_rates[item] = on_floor[item]*floors[item]*production_rate[item]
+    return production_rates
+
+print(production_floors)
+
+```
+
+```{python}
+#| echo: false
+get_production_rates(production_on_floor, production_floors)
+```
+
+
+```{python}
+#| echo: false
+import json
+from multiprocessing import get_all_start_methods
+
+# Mines production
+iron_mines = {"rock": 360, "shilov": 240}
+
+
+iron_recipes = {
+    "iron_rod": {"iron_ingot": 15},
+    "iron_plate": {"iron_ingot": 30},
+    "screws": {"iron_rod": 10},
+    "reinforced_iron_plate": {"iron_plate": 30, "screws": 60},
+    "rotor": {"iron_rod": 20, "screws": 100},
+    "modular_frame": {"reinforced_iron_plate": 3, "iron_rod": 12},
+}
+
+iron_production_rate = {
+    "iron_rod": 15,
+    "iron_plate": 20,
+    "screws": 40,
+    "reinforced_iron_plate": 5,
+    "rotor": 4,
+    "modular_frame": 2,
+}
+
+
+def get_production_rate(item_name, production_rates, producer_count=1):
+    if item_name in production_rates:
+        return production_rates[item_name] * producer_count
+    return 0
+
+
+def get_cons_rate(item_name, recipes, producer_count=1):
+    cons = {}
+    if item_name in recipes:
+        for ing, amount in recipes[item_name].items():
+            cons[ing] = amount * producer_count
+    return cons
+
+
+constr_on_floor = {
+    "iron_rod": 4,
+    "iron_plate": 4,
+    "screws": 4,
+    "reinforced_iron_plate": 4,
+    "rotor": 4,
+    "modular_frame": 4,
+}
+
+iron_floor_count = {
+    "iron_rod": 6,
+    "iron_plate": 3,
+    "screws": 4,
+    "reinforced_iron_plate": 2,
+    "rotor": 1,
+    "modular_frame": 2,
+}
+```
+
+```{python}
+#| echo: false
+def get_prof_summary(floor_count):
+    summary = {}
+    for item, count in floor_count.items():
+        summary[item] = get_production_rate(
+            item, iron_production_rate, count * constr_on_floor[item]
+        )
+    return summary
+
+
+def get_cons_summary(floor_count):
+    summary = {}
+    for item, count in floor_count.items():
+        summary[item] = get_cons_rate(item, iron_recipes, count * constr_on_floor[item])
+    return summary
+
+
+prod_summary = get_prof_summary(iron_floor_count)
+cons_summary = get_cons_summary(iron_floor_count)
+
+
+def print_sum(summary):
+    print("\n".join("{}\t{}".format(k, v) for k, v in summary.items()))
+
+
+print("PROD")
+print_sum(prod_summary)
+
+print("\nCONS")
+print_sum(cons_summary)
+
+
+def get_prod_cons(item):
+    summary = {}
+    cons = get_cons_summary(iron_floor_count)
+    summary["Need"] = 0
+    for _, v in cons.items():
+        if item in v.keys():
+            summary["Need"] += v[item]
+    summary["Production"] = (
+        constr_on_floor[item] * iron_floor_count[item] * iron_production_rate[item]
+    )
+    summary["Consumption"] = dict(
+        (k, constr_on_floor[item] * iron_floor_count[item] * v)
+        for k, v in iron_recipes[item].items()
+    )
+    summary["Available"] = summary["Production"] - summary["Need"]
+    return summary
+
+
+def get_item_info(item):
+    print("\n {}".format(item))
+    print_sum(get_prod_cons(item))
+
+
+get_item_info("iron_rod")
+get_item_info("iron_plate")
+get_item_info("reinforced_iron_plate")
+get_item_info("modular_frame")
+
+```

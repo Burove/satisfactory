@@ -8,5 +8,8 @@
   "resources.qmd": {
     "resources.html": "e5b8db46",
     "resources.docx": "deedc507"
+  },
+  "factories.qmd": {
+    "factories.html": "5ca9dd57"
   }
 }
