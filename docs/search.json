@@ -18,7 +18,7 @@
     "href": "resources.html",
     "title": "Добыча ресурсов",
     "section": "",
-    "text": "Normal  Iron x6\nNormal  Limestone x1\n\n\n\nNormal  Limestone x1\n\n\n\nNormal  Copper x2\n\n\n\nPure  Copper x4\n\n\n\nNormal  Coal x2\nImpure  Coal x2\n\n\n\nPure  Caterium x2\n\n\n\nNormal  Coal x2\n\n\n\nPure  Quartz x2\nNormal  SAM x1\n\n\n\nPure  Iron x3\n\n\n\nPure  Coal x3"
+    "text": "Iron  Normal x6\nLimestone  Normal x1\n\n\n\nLimestone  Normal x1\n\n\n\nCopper  Normal x2\n\n\n\nCopper  Pure x4\n\n\n\nCoal  Normal x2\nCoal  Impure x2\n\n\n\nCaterium  Pure x2\n\n\n\nCoal  Normal x2\n\n\n\nQuartz  Pure x2\nSAM  Normal x1\n\n\n\nIron  Pure x3\n\n\n\nCoal  Pure x3"
   },
   {
     "objectID": "resources.html#добыча-ресурсов",
@@ -102,6 +102,6 @@
     "href": "resources.html#занятые-жилы",
     "title": "Добыча ресурсов",
     "section": "",
-    "text": "Normal  Iron x6\nNormal  Limestone x1\n\n\n\nNormal  Limestone x1\n\n\n\nNormal  Copper x2\n\n\n\nPure  Copper x4\n\n\n\nNormal  Coal x2\nImpure  Coal x2\n\n\n\nPure  Caterium x2\n\n\n\nNormal  Coal x2\n\n\n\nPure  Quartz x2\nNormal  SAM x1\n\n\n\nPure  Iron x3\n\n\n\nPure  Coal x3"
+    "text": "Iron  Normal x6\nLimestone  Normal x1\n\n\n\nLimestone  Normal x1\n\n\n\nCopper  Normal x2\n\n\n\nCopper  Pure x4\n\n\n\nCoal  Normal x2\nCoal  Impure x2\n\n\n\nCaterium  Pure x2\n\n\n\nCoal  Normal x2\n\n\n\nQuartz  Pure x2\nSAM  Normal x1\n\n\n\nIron  Pure x3\n\n\n\nCoal  Pure x3"
   }
 ]

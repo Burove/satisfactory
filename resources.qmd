@@ -127,8 +127,8 @@ extr_places = get_extraction_places(
 ```{python}
 #| echo: false
 def node_summary(node):
-    summary = node["Purity"].name + " " 
-    summary = summary + get_icon(node['Node type'].name, Item_Type.Resource.value) +" "+node['Node type'].name + " x"
+    summary =  node['Node type'].name+ " " 
+    summary = summary + get_icon(node['Node type'].name, Item_Type.Resource.value) +" "+ node["Purity"].name + " x"
     summary = summary + str(node["Count"])
     return summary
 
