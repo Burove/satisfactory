@@ -79,6 +79,8 @@ recipes = {
 
 ## MegaFactory
 
+## Заводы стоят на производство такого колличества:
+
 ```{python}
 #| echo: false
 
@@ -141,6 +143,8 @@ print(show_production_rates(production_rates))
 ```
 
 
+## В каких количествах потребляется:
+
 ```{python}
 #| echo: false
 #| output: asis
@@ -168,13 +172,42 @@ def show_cons_rate(cons_rates):
         summary = summary + "**"+i.value +"**"+ "| " + show_recipe(cons_rates[i]) + "\n\n"
     return summary
 
-print(show_cons_rate(consumption_rate(production_on_floor, production_floors)))
+cons_rate = consumption_rate(production_on_floor, production_floors)
+
+print(show_cons_rate(cons_rate))
+```
+
+## Разница потребления и производства
+
+```{python}
+#| echo: false
+import copy
+
+def diff_cons_prod(prod_rate, cons_rate):
+    diff_cons_prod_rate = copy.deepcopy(prod_rate)
+    for cons_item in cons_rate:
+        for item in cons_rate[cons_item]:
+            if not item in diff_cons_prod_rate.keys():
+                diff_cons_prod_rate[item] = 0
+            diff_cons_prod_rate[item] -= cons_rate[cons_item][item]
+    return diff_cons_prod_rate
+
+
+diff_c_p  = diff_cons_prod(production_rates,cons_rate)
 ```
 
 
+```{python}
+#| echo: false
+#| output: asis
+def show_diff(diff):
+    summary = ""
+    for i in diff:
+        summary = summary + "**"+i.value+"**: "+str(diff[i])+"\n\n"
+    return summary
 
-
-
+print(show_diff(diff_c_p))
+```
 
 
 
