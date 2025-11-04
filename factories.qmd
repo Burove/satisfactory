@@ -107,13 +107,19 @@ def get_production_rates(on_floor, floors):
         production_rates[item] = on_floor[item]*floors[item]*production_rate[item]
     return production_rates
 
-print(production_floors)
+
+def show_production_rates(production_rates):
+    summary = ""
+    for item in production_rates:
+        summary = summary + item.value +": " + str(production_rates[item])+"\n\n"
+    return summary
 
 ```
 
 ```{python}
 #| echo: false
-get_production_rates(production_on_floor, production_floors)
+#| output: asis
+print(show_production_rates(get_production_rates(production_on_floor, production_floors)))
 ```
 
 
@@ -196,19 +202,19 @@ def get_cons_summary(floor_count):
     return summary
 
 
-prod_summary = get_prof_summary(iron_floor_count)
-cons_summary = get_cons_summary(iron_floor_count)
+#prod_summary = get_prof_summary(iron_floor_count)
+#cons_summary = get_cons_summary(iron_floor_count)
 
 
 def print_sum(summary):
     print("\n".join("{}\t{}".format(k, v) for k, v in summary.items()))
 
 
-print("PROD")
-print_sum(prod_summary)
+#print("PROD")
+#print_sum(prod_summary)
 
-print("\nCONS")
-print_sum(cons_summary)
+#print("\nCONS")
+#print_sum(cons_summary)
 
 
 def get_prod_cons(item):
@@ -234,9 +240,9 @@ def get_item_info(item):
     print_sum(get_prod_cons(item))
 
 
-get_item_info("iron_rod")
-get_item_info("iron_plate")
-get_item_info("reinforced_iron_plate")
-get_item_info("modular_frame")
+#get_item_info("iron_rod")
+#get_item_info("iron_plate")
+#get_item_info("reinforced_iron_plate")
+#get_item_info("modular_frame")
 
 ```

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-input92c4892f4b92da62</title>
+<title>quarto-input4909216574f881bf</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -124,64 +124,12 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="megafactory" class="level2">
 <h2 class="anchored" data-anchor-id="megafactory">MegaFactory</h2>
-<div id="cabd4f07" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>{&lt;Item.Iron_rod: 'Iron rod'&gt;: 6, &lt;Item.Iron_plate: 'Iron plate'&gt;: 3, &lt;Item.Screws: 'Screws'&gt;: 4, &lt;Item.Reinforced_iron_plate: 'Reinforced iron plate'&gt;: 2, &lt;Item.Rotor: 'Rotor'&gt;: 1, &lt;Item.Modular_frame: 'Modular frame'&gt;: 1}</code></pre>
-</div>
-</div>
-<div id="5ae59ad4" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>{&lt;Item.Iron_rod: 'Iron rod'&gt;: 360,
- &lt;Item.Iron_plate: 'Iron plate'&gt;: 240,
- &lt;Item.Screws: 'Screws'&gt;: 640,
- &lt;Item.Reinforced_iron_plate: 'Reinforced iron plate'&gt;: 40,
- &lt;Item.Rotor: 'Rotor'&gt;: 16,
- &lt;Item.Modular_frame: 'Modular frame'&gt;: 8}</code></pre>
-</div>
-</div>
-<div id="1f010c14" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-stdout">
-<pre><code>PROD
-iron_rod    360
-iron_plate  240
-screws  640
-reinforced_iron_plate   40
-rotor   16
-modular_frame   16
-
-CONS
-iron_rod    {'iron_ingot': 360}
-iron_plate  {'iron_ingot': 360}
-screws  {'iron_rod': 160}
-reinforced_iron_plate   {'iron_plate': 240, 'screws': 480}
-rotor   {'iron_rod': 80, 'screws': 400}
-modular_frame   {'reinforced_iron_plate': 24, 'iron_rod': 96}
-
- iron_rod
-Need    336
-Production  360
-Consumption {'iron_ingot': 360}
-Available   24
-
- iron_plate
-Need    240
-Production  240
-Consumption {'iron_ingot': 360}
-Available   0
-
- reinforced_iron_plate
-Need    24
-Production  40
-Consumption {'iron_plate': 240, 'screws': 480}
-Available   16
-
- modular_frame
-Need    0
-Production  16
-Consumption {'reinforced_iron_plate': 24, 'iron_rod': 96}
-Available   16</code></pre>
-</div>
-</div>
+<p>Iron rod: 360</p>
+<p>Iron plate: 240</p>
+<p>Screws: 640</p>
+<p>Reinforced iron plate: 40</p>
+<p>Rotor: 16</p>
+<p>Modular frame: 8</p>
 
 
 </section>
