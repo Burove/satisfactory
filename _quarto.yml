@@ -4,12 +4,12 @@ project:
 website:
   title: ""
   navbar:
-    theme: darkly
+    theme: cosmo
     left:
       - href: index.qmd
         text: ПыПецПром
       - resources.qmd
-      - factories.qmd
+      - Factories.qmd
 
 format:
   html:

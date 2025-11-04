@@ -3,7 +3,6 @@ title: "Заводы"
 filters: [remove_title.lua]
 ---
 
-
 ```{python}
 #| echo: false
 from enum import Enum
@@ -78,27 +77,43 @@ recipes = {
 
 ```
 
-
 ## MegaFactory
+
 ```{python}
 #| echo: false
 
 production_on_floor = {
     Item.Iron_rod: 4,
     Item.Iron_plate: 4,
+    Item.Steel_beam: 4,
+    Item.Steel_pipe: 4,
+    Item.Encased_industrial_beam: 4,
     Item.Screws: 4,
     Item.Reinforced_iron_plate: 4,
+    Item.Smart_plating: 4,
+    Item.Stator: 4,
     Item.Rotor: 4,
-    Item.Modular_frame: 4
+    Item.Modular_frame: 4,
+    Item.Versatile_framework: 4,
+    Item.Automated_wiring: 4,
+    Item.Motor: 2
 }
 
 production_floors = {
     Item.Iron_rod: 6,
     Item.Iron_plate: 3,
+    Item.Steel_beam: 2,
+    Item.Steel_pipe: 2,
+    Item.Encased_industrial_beam: 1,
     Item.Screws: 4,
-    Item.Reinforced_iron_plate: 2,
+    Item.Reinforced_iron_plate: 1,
+    Item.Smart_plating: 1,
+    Item.Stator: 2,
     Item.Rotor: 1,
-    Item.Modular_frame: 1
+    Item.Modular_frame: 2,
+    Item.Versatile_framework: 1,
+    Item.Automated_wiring: 1,
+    Item.Motor: 1
 }
 
 def get_production_rates(on_floor, floors):
@@ -121,7 +136,6 @@ def show_production_rates(production_rates):
 #| output: asis
 print(show_production_rates(get_production_rates(production_on_floor, production_floors)))
 ```
-
 
 ```{python}
 #| echo: false

@@ -9,7 +9,7 @@
         "filters: [remove_title.lua]\n",
         "---"
       ],
-      "id": "36464e27"
+      "id": "0f743d0c"
     },
     {
       "cell_type": "code",
@@ -42,7 +42,7 @@
         "\n",
         "BASE_MINING_SPEED = 60"
       ],
-      "id": "4a4680fa",
+      "id": "0aa9d74d",
       "execution_count": null,
       "outputs": []
     },
@@ -58,7 +58,7 @@
         "    expr = f\"![](./icons/{item_type}/{name}.png){{width={ICON_SIZE}}}\"\n",
         "    return expr"
       ],
-      "id": "21d7c12d",
+      "id": "2b004ca2",
       "execution_count": null,
       "outputs": []
     },
@@ -68,7 +68,7 @@
       "source": [
         "# Добыча ресурсов\n"
       ],
-      "id": "c1ff0577"
+      "id": "b8d87bf0"
     },
     {
       "cell_type": "code",
@@ -92,7 +92,7 @@
         "        add_resource_node(resource_nodes, node)\n",
         "    return resource_nodes"
       ],
-      "id": "82c34927",
+      "id": "f3fd4e0a",
       "execution_count": null,
       "outputs": []
     },
@@ -155,7 +155,7 @@
         "        ]\n",
         "    )])"
       ],
-      "id": "4fea7fc5",
+      "id": "399a6935",
       "execution_count": null,
       "outputs": []
     },
@@ -184,7 +184,7 @@
         "\n",
         "    return summary"
       ],
-      "id": "356012d4",
+      "id": "c1cec0bf",
       "execution_count": null,
       "outputs": []
     },
@@ -194,7 +194,7 @@
       "source": [
         "## Занятые жилы"
       ],
-      "id": "913f037c"
+      "id": "1b5f421b"
     },
     {
       "cell_type": "code",
@@ -204,7 +204,7 @@
         "#| output: asis\n",
         "print(places_summary(extr_places))"
       ],
-      "id": "0adbc645",
+      "id": "d7581ec8",
       "execution_count": null,
       "outputs": []
     }
