@@ -1,7 +1,11 @@
 ---
 title: "satisfactory"
+filters: [remove_title.lua]
 ---
 
-This is a Quarto website.
+![](./icons/logo.png)
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+```{python}
+
+
+```

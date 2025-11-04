@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "satisfactory",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "{ width = {&lt;var icon_size.height&gt;}}"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,96 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Добыча ресурсов",
+    "section": "",
+    "text": "Normal  Iron x6\nNormal  Limestone x1\n\n\n\nNormal  Limestone x1\n\n\n\nNormal  Copper x2\n\n\n\nPure  Copper x4\n\n\n\nNormal  Coal x2\nImpure  Coal x2\n\n\n\nPure  Caterium x2\n\n\n\nNormal  Coal x2\n\n\n\nPure  Quartz x2\nNormal  SAM x1\n\n\n\nPure  Iron x3\n\n\n\nPure  Coal x3"
+  },
+  {
+    "objectID": "resources.html#добыча-ресурсов",
+    "href": "resources.html#добыча-ресурсов",
+    "title": "",
+    "section": "",
+    "text": "Normal  Iron x6\nNormal  Limestone x1\n\n\n\nNormal  Limestone x1\n\n\n\nNormal  Copper x2\n\n\n\nPure  Copper x4\n\n\n\nNormal  Coal x2\nImpure  Coal x2\n\n\n\nPure  Caterium x2\n\n\n\nNormal  Coal x2\n\n\n\nPure  Quartz x2\nNormal  SAM x1\n\n\n\nPure  Iron x3\n\n\n\nPure  Coal x3"
+  },
+  {
+    "objectID": "resources.html#body-dump",
+    "href": "resources.html#body-dump",
+    "title": "",
+    "section": "Body Dump",
+    "text": "Body Dump\nNormal  x6\nNormal  x1"
+  },
+  {
+    "objectID": "resources.html#mushroom-beach",
+    "href": "resources.html#mushroom-beach",
+    "title": "",
+    "section": "Mushroom Beach",
+    "text": "Mushroom Beach\nNormal  x1"
+  },
+  {
+    "objectID": "resources.html#copperfield",
+    "href": "resources.html#copperfield",
+    "title": "",
+    "section": "Copperfield",
+    "text": "Copperfield\nNormal  x2"
+  },
+  {
+    "objectID": "resources.html#barbieland",
+    "href": "resources.html#barbieland",
+    "title": "",
+    "section": "Barbieland",
+    "text": "Barbieland\nPure  x4"
+  },
+  {
+    "objectID": "resources.html#dunbass",
+    "href": "resources.html#dunbass",
+    "title": "",
+    "section": "Dunbass",
+    "text": "Dunbass\nNormal  x2\nImpure  x2"
+  },
+  {
+    "objectID": "resources.html#golden-rock",
+    "href": "resources.html#golden-rock",
+    "title": "",
+    "section": "Golden Rock",
+    "text": "Golden Rock\nPure  x2"
+  },
+  {
+    "objectID": "resources.html#shitcoal-lake",
+    "href": "resources.html#shitcoal-lake",
+    "title": "",
+    "section": "Shitcoal Lake",
+    "text": "Shitcoal Lake\nNormal  x2"
+  },
+  {
+    "objectID": "resources.html#bluedick-cave",
+    "href": "resources.html#bluedick-cave",
+    "title": "",
+    "section": "Bluedick Cave",
+    "text": "Bluedick Cave\nPure  x2\nNormal  x1"
+  },
+  {
+    "objectID": "resources.html#steal-stream",
+    "href": "resources.html#steal-stream",
+    "title": "",
+    "section": "Steal Stream",
+    "text": "Steal Stream\nPure  x3"
+  },
+  {
+    "objectID": "resources.html#steal-lake",
+    "href": "resources.html#steal-lake",
+    "title": "",
+    "section": "Steal Lake",
+    "text": "Steal Lake\nPure  x3"
+  },
+  {
+    "objectID": "resources.html#занятые-жилы",
+    "href": "resources.html#занятые-жилы",
+    "title": "Добыча ресурсов",
+    "section": "",
+    "text": "Normal  Iron x6\nNormal  Limestone x1\n\n\n\nNormal  Limestone x1\n\n\n\nNormal  Copper x2\n\n\n\nPure  Copper x4\n\n\n\nNormal  Coal x2\nImpure  Coal x2\n\n\n\nPure  Caterium x2\n\n\n\nNormal  Coal x2\n\n\n\nPure  Quartz x2\nNormal  SAM x1\n\n\n\nPure  Iron x3\n\n\n\nPure  Coal x3"
   }
 ]

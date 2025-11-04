@@ -2,18 +2,18 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "satisfactory"
+  title: ""
   navbar:
+    theme: cosmo
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: ПыПецПром
+      - resources.qmd
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      - darkly
     css: styles.css
     toc: true
 

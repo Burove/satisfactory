@@ -4,5 +4,9 @@
   },
   "about.qmd": {
     "about.html": "83aff700"
+  },
+  "resources.qmd": {
+    "resources.html": "e5b8db46",
+    "resources.docx": "deedc507"
   }
 }

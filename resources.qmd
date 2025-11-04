@@ -1,0 +1,156 @@
+---
+title: "Ресурсы"
+filters: [remove_title.lua]
+---
+```{python}
+#| echo: false
+from enum import Enum
+
+class Item_Type(Enum):
+    Resource =  "Resources"
+
+class Node_Type(Enum):
+    Limestone = "Limestone"
+    Iron = "Iron"
+    Copper = "Copper"
+    Coal = "Coal"
+    Caterium = "Caterium"
+    SAM = "SAM"
+    Quartz = "Quartz"
+
+class Purity_Type(Enum):
+    Impure = 0.5
+    Normal = 1
+    Pure = 2
+
+class Miner_Type(Enum):
+    Mk1 = 1
+    Mk2 = 2
+    Mk3 = 4
+
+BASE_MINING_SPEED = 60
+
+```
+
+```{python}
+#| echo: false
+# global page
+ICON_SIZE = 32
+
+def get_icon(name, item_type):
+    expr = f"![](./icons/{item_type}/{name}.png){{width={ICON_SIZE}}}"
+    return expr
+```
+
+# Добыча ресурсов
+
+
+```{python}
+#| echo: false
+def get_node(node_type, purity, count):
+    node = {
+        "Node type": node_type,
+        "Purity": purity,
+        "Count": count
+    }
+    return node
+
+def add_resource_node(resource_nodes, new_resource_node):
+    resource_nodes.append(new_resource_node)
+    return resource_nodes
+
+def add_resource_nodes(resource_nodes, new_resource_nodes):
+    for node in new_resource_nodes:
+        add_resource_node(resource_nodes, node)
+    return resource_nodes
+
+```
+
+```{python}
+#| echo: false
+def get_extraction_place(name, resource_nodes):
+    return { name: resource_nodes }
+
+def get_extraction_places(places):
+    merged_places = {}
+    for place in places:
+        merged_places = merged_places | place
+    return merged_places
+
+extr_places = get_extraction_places( 
+    [get_extraction_place("Body Dump", [
+        get_node(Node_Type.Iron, Purity_Type.Normal, 6),
+        get_node(Node_Type.Limestone, Purity_Type.Normal, 1)
+        ]
+    ),
+    get_extraction_place("Mushroom Beach", [
+        get_node(Node_Type.Limestone, Purity_Type.Normal, 1)
+        ]
+    ),
+    get_extraction_place("Copperfield", [
+        get_node(Node_Type.Copper, Purity_Type.Normal, 2)
+        ]
+    ),
+    get_extraction_place("Barbieland", [
+        get_node(Node_Type.Copper, Purity_Type.Pure, 4)
+        ]
+    ),
+    get_extraction_place("Dunbass", [
+        get_node(Node_Type.Coal, Purity_Type.Normal, 2),
+        get_node(Node_Type.Coal, Purity_Type.Impure, 2)
+        ]
+    ),
+    get_extraction_place("Golden Rock", [
+        get_node(Node_Type.Caterium, Purity_Type.Pure, 2)
+        ]
+    ),
+    get_extraction_place("Shitcoal Lake", [
+        get_node(Node_Type.Coal, Purity_Type.Normal, 2)
+        ]
+    ),
+    get_extraction_place("Bluedick Cave", [
+        get_node(Node_Type.Quartz, Purity_Type.Pure, 2),
+        get_node(Node_Type.SAM, Purity_Type.Normal, 1)
+        ]
+    ),
+    get_extraction_place("Steal Stream", [
+        get_node(Node_Type.Iron, Purity_Type.Pure, 3)
+        ]
+    ),
+    get_extraction_place("Steal Lake", [
+        get_node(Node_Type.Coal, Purity_Type.Pure, 3)
+        ]
+    )])
+
+```
+
+```{python}
+#| echo: false
+def node_summary(node):
+    summary = node["Purity"].name + " " 
+    summary = summary + get_icon(node['Node type'].name, Item_Type.Resource.value) +" "+node['Node type'].name + " x"
+    summary = summary + str(node["Count"])
+    return summary
+
+def nodes_summary(nodes, begin_with = ""):
+    summary = begin_with
+    for node in nodes:
+        summary = summary + node_summary(node) +"\n\n"
+    return summary
+
+def places_summary(places):
+    summary = ""
+    for place in places:
+        summary = summary + "### " + place + "\n\n"
+        summary = summary + nodes_summary(places[place])
+
+    return summary
+
+```
+
+## Занятые жилы
+```{python}
+#| echo: false
+#| output: asis
+print(places_summary(extr_places))
+```
