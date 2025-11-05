@@ -17,6 +17,9 @@ def get_icon(name, item_type):
     expr = f"![](./icons/{item_type.value}/{name}.png){{width={ICON_SIZE}}}"
     return expr
 
+def get_item_name_with_icon(name, item_type):
+    return name+" " +get_icon(name, item_type)
+
 class Item(Enum):
     Iron_ingot = "Iron Ingot"
     Copper_ingot = "Copper Ingot"
@@ -149,11 +152,8 @@ def show_production_rates(production_rates):
 
 production_rates = get_production_rates(production_on_floor, production_floors)
 
-print(show_production_rates(production_rates))
+#print(show_production_rates(production_rates))
 ```
-
-
-## В каких количествах потребляется:
 
 ```{python}
 #| echo: false
@@ -184,8 +184,23 @@ def show_cons_rate(cons_rates):
 
 cons_rate = consumption_rate(production_on_floor, production_floors)
 
-print(show_cons_rate(cons_rate))
+#print(show_cons_rate(cons_rate))
 ```
+
+```{python}
+#| echo: false
+def show_recipe(recipe):
+    recipe_str = ""
+    for i in recipe:
+        recipe_str = recipe_str + " - "+i.value+ get_icon(i.value, Item_Type.Item)  +" x"+str(recipe[i])+"\n"
+    return recipe_str
+
+headers = ["Название", "Потребляемые ресурсы"]
+Markdown(tabulate([("**"+get_item_name_with_icon(k.value, Item_Type.Item)+" x"+ str(production_rates[k])+"**", show_recipe(v))  for k,v in cons_rate.items()], headers = headers))  
+
+#show_recipe(recipes[Item.Automated_wiring])
+```
+
 
 ## Разница потребления и производства
 
@@ -234,22 +249,9 @@ def get_number_with_color(number):
 
 
 d = diff_c_p
-headers = ["Name", "Разница"]
-#Markdown(tabulate([(k.value,get_number_with_color(v))  for k,v in d.items()], headers = headers))  
+headers = ["Название", "Разница"]
+Markdown(tabulate([("**"+get_item_name_with_icon(k.value, Item_Type.Item)+"**",get_number_with_color(v))  for k,v in d.items()], headers = headers))  
 #Markdown(get_number_with_color(-12))
 ```
 
 
-```{python}
-#| echo: false
-def show_recipe(recipe):
-    recipe_str = ""
-    for i in recipe:
-        recipe_str = recipe_str + " - "+i.value+ get_icon(i.value, Item_Type.Item)  +" x"+str(recipe[i])+"\n"
-    return recipe_str
-
-headers = ["Название", "Рецепт"]
-Markdown(tabulate([(k.value, show_recipe(v))  for k,v in recipes.items()], headers = headers))  
-
-#show_recipe(recipes[Item.Automated_wiring])
-```
