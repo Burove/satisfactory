@@ -8,6 +8,7 @@ from enum import Enum
 
 class Item_Type(Enum):
     Resource =  "Resources"
+    Item = "Items"
 
 class Node_Type(Enum):
     Limestone = "Limestone"

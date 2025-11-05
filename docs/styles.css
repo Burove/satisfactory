@@ -1,1 +1,10 @@
 /* css styles */
+.red-text {
+      color: rgb(254, 70, 70);
+}
+.green-text {
+      color: rgb(5, 208, 5);
+}
+.yellow-text{
+    color: rgb(234, 234, 134);
+}

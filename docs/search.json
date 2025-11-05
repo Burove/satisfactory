@@ -46,20 +46,20 @@
     "href": "Factories.html#заводы-стоят-на-производство-такого-колличества",
     "title": "",
     "section": "Заводы стоят на производство такого колличества:",
-    "text": "Заводы стоят на производство такого колличества:\nIron rod: 360\nIron plate: 240\nSteel beam: 120\nSteel pipe: 160\nEncased industrial beam: 24\nScrews: 640\nReinforced iron plate: 20\nSmart plating: 8\nStator: 40\nRotor: 16\nModular frame: 16\nVersatile Framework: 20\nAutomated Wiring: 10.0\nMotor: 20"
+    "text": "Заводы стоят на производство такого колличества:\nIron Rod: 420\nIron Plate: 400\nSteel Beam: 120\nSteel Pipe: 160\nEncased Industrial Beam: 24\nScrews: 1280\nReinforced Iron Plate: 40\nSmart Plating: 8\nStator: 40\nRotor: 32\nModular Frame: 16\nVersatile Framework: 20\nAutomated Wiring: 10.0\nMotor: 20"
   },
   {
     "objectID": "Factories.html#в-каких-количествах-потребляется",
     "href": "Factories.html#в-каких-количествах-потребляется",
     "title": "",
     "section": "В каких количествах потребляется:",
-    "text": "В каких количествах потребляется:\nIron rod| Iron ingot: 360\nIron plate| Iron ingot: 360\nSteel beam| Steel ingot: 480\nSteel pipe| Steel ingot: 240\nEncased industrial beam| Steel beam: 72 Concrete: 144\nScrews| Iron rod: 160\nReinforced iron plate| Iron plate: 120 Screws: 240\nSmart plating| Reinforced iron plate: 8 Rotor: 8\nStator| Steel pipe: 120 Wire: 320\nRotor| Iron plate: 80 Screws: 400\nModular frame| Reinforced iron plate: 24 Iron rod: 96\nVersatile Framework| Modular frame: 10.0 Steel beam: 120\nAutomated Wiring| Stator: 10.0 Cable: 200\nMotor| Stator: 20 Rotor: 20"
+    "text": "В каких количествах потребляется:\nIron Rod| Iron Ingot: 420\nIron Plate| Iron Ingot: 600\nSteel Beam| Steel Ingot: 480\nSteel Pipe| Steel Ingot: 240\nEncased Industrial Beam| Steel Beam: 72 Concrete: 144\nScrews| Iron Rod: 320\nReinforced Iron Plate| Iron Plate: 240 Screws: 480\nSmart Plating| Reinforced Iron Plate: 8 Rotor: 8\nStator| Steel Pipe: 120 Wire: 320\nRotor| Iron Plate: 160 Screws: 800\nModular Frame| Reinforced Iron Plate: 24 Iron Rod: 96\nVersatile Framework| Modular Frame: 10.0 Steel Beam: 120\nAutomated Wiring| Stator: 10.0 Cable: 200\nMotor| Stator: 20 Rotor: 20"
   },
   {
     "objectID": "Factories.html#разница-потребления-и-производства",
     "href": "Factories.html#разница-потребления-и-производства",
     "title": "",
     "section": "Разница потребления и производства",
-    "text": "Разница потребления и производства\nIron rod: 104\nIron plate: 40\nSteel beam: -72\nSteel pipe: 40\nEncased industrial beam: 24\nScrews: 0\nReinforced iron plate: -12\nSmart plating: 8\nStator: 10.0\nRotor: -12\nModular frame: 6.0\nVersatile Framework: 20\nAutomated Wiring: 10.0\nMotor: 20\nIron ingot: -720\nSteel ingot: -720\nConcrete: -144\nWire: -320\nCable: -200"
+    "text": "Разница потребления и производства\n\n\n\n\n\nНазвание\nРецепт\n\n\n\n\nWire\n- Copper Ingot x15\n\n\nIron Ingot\n\n\n\nSteel Ingot\n\n\n\nConcrete\n\n\n\nCable\n- Wire x60\n\n\nIron Rod\n- Iron Ingot x15\n\n\nIron Plate\n- Iron Ingot x30\n\n\nScrews\n- Iron Rod x10\n\n\nReinforced Iron Plate\n- Iron Plate x30\n\n\n\n- Screws x60\n\n\nRotor\n- Iron Plate x20\n\n\n\n- Screws x100\n\n\nModular Frame\n- Reinforced Iron Plate x3\n\n\n\n- Iron Rod x12\n\n\nSteel Beam\n- Steel Ingot x60\n\n\nSteel Pipe\n- Steel Ingot x30\n\n\nEncased Industrial Beam\n- Steel Beam x18\n\n\n\n- Concrete x36\n\n\nStator\n- Steel Pipe x15\n\n\n\n- Wire x40\n\n\nSmart Plating\n- Reinforced Iron Plate x2\n\n\n\n- Rotor x2\n\n\nVersatile Framework\n- Modular Frame x2.5\n\n\n\n- Steel Beam x30\n\n\nAutomated Wiring\n- Stator x2.5\n\n\n\n- Cable x50\n\n\nMotor\n- Stator x10\n\n\n\n- Rotor x10"
   }
 ]

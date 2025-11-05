@@ -6,25 +6,35 @@ filters: [remove_title.lua]
 ```{python}
 #| echo: false
 from enum import Enum
+from IPython.display import Markdown
+from tabulate import tabulate
+ICON_SIZE = 32
+class Item_Type(Enum):
+    Resource =  "Resources"
+    Item = "Items"
+
+def get_icon(name, item_type):
+    expr = f"![](./icons/{item_type.value}/{name}.png){{width={ICON_SIZE}}}"
+    return expr
 
 class Item(Enum):
-    Iron_ingot = "Iron ingot"
-    Copper_ingot = "Copper ingot"
-    Steel_ingot = "Steel ingot" 
+    Iron_ingot = "Iron Ingot"
+    Copper_ingot = "Copper Ingot"
+    Steel_ingot = "Steel Ingot" 
     Concrete = "Concrete"
     Wire = "Wire"
     Cable = "Cable"
-    Iron_rod = "Iron rod"
-    Iron_plate = "Iron plate"
+    Iron_rod = "Iron Rod"
+    Iron_plate = "Iron Plate"
     Screws = "Screws"
-    Reinforced_iron_plate = "Reinforced iron plate"
+    Reinforced_iron_plate = "Reinforced Iron Plate"
     Rotor = "Rotor"
-    Modular_frame = "Modular frame"
-    Steel_beam = "Steel beam"
-    Steel_pipe = "Steel pipe" 
-    Encased_industrial_beam = "Encased industrial beam"
+    Modular_frame = "Modular Frame"
+    Steel_beam = "Steel Beam"
+    Steel_pipe = "Steel Pipe" 
+    Encased_industrial_beam = "Encased Industrial Beam"
     Stator = "Stator"
-    Smart_plating = "Smart plating"
+    Smart_plating = "Smart Plating"
     Versatile_framework = "Versatile Framework"
     Automated_wiring = "Automated Wiring"
     Motor = "Motor"
@@ -102,16 +112,16 @@ production_on_floor = {
 }
 
 production_floors = {
-    Item.Iron_rod: 6,
-    Item.Iron_plate: 3,
+    Item.Iron_rod: 7,
+    Item.Iron_plate: 5,
     Item.Steel_beam: 2,
     Item.Steel_pipe: 2,
     Item.Encased_industrial_beam: 1,
-    Item.Screws: 4,
-    Item.Reinforced_iron_plate: 1,
+    Item.Screws: 8,
+    Item.Reinforced_iron_plate: 2,
     Item.Smart_plating: 1,
     Item.Stator: 2,
-    Item.Rotor: 1,
+    Item.Rotor: 2,
     Item.Modular_frame: 2,
     Item.Versatile_framework: 1,
     Item.Automated_wiring: 1,
@@ -196,7 +206,6 @@ def diff_cons_prod(prod_rate, cons_rate):
 diff_c_p  = diff_cons_prod(production_rates,cons_rate)
 ```
 
-
 ```{python}
 #| echo: false
 #| output: asis
@@ -210,132 +219,37 @@ import pandas as pd
 
 #f = pd.DataFrame.from_dict(diff_c_p, orient='index', columns=["name"])
 #print(df.to_markdown(index=False))
-print(show_diff(diff_c_p))
-```
-
-
-
-
-```{python}
-#| echo: false
-import json
-from multiprocessing import get_all_start_methods
-
-# Mines production
-iron_mines = {"rock": 360, "shilov": 240}
-
-
-iron_recipes = {
-    "iron_rod": {"iron_ingot": 15},
-    "iron_plate": {"iron_ingot": 30},
-    "screws": {"iron_rod": 10},
-    "reinforced_iron_plate": {"iron_plate": 30, "screws": 60},
-    "rotor": {"iron_rod": 20, "screws": 100},
-    "modular_frame": {"reinforced_iron_plate": 3, "iron_rod": 12},
-}
-
-iron_production_rate = {
-    "iron_rod": 15,
-    "iron_plate": 20,
-    "screws": 40,
-    "reinforced_iron_plate": 5,
-    "rotor": 4,
-    "modular_frame": 2,
-}
-
-
-def get_production_rate(item_name, production_rates, producer_count=1):
-    if item_name in production_rates:
-        return production_rates[item_name] * producer_count
-    return 0
-
-
-def get_cons_rate(item_name, recipes, producer_count=1):
-    cons = {}
-    if item_name in recipes:
-        for ing, amount in recipes[item_name].items():
-            cons[ing] = amount * producer_count
-    return cons
-
-
-constr_on_floor = {
-    "iron_rod": 4,
-    "iron_plate": 4,
-    "screws": 4,
-    "reinforced_iron_plate": 4,
-    "rotor": 4,
-    "modular_frame": 4,
-}
-
-iron_floor_count = {
-    "iron_rod": 6,
-    "iron_plate": 3,
-    "screws": 4,
-    "reinforced_iron_plate": 2,
-    "rotor": 1,
-    "modular_frame": 2,
-}
+#print(show_diff(diff_c_p))
 ```
 
 ```{python}
 #| echo: false
-def get_prof_summary(floor_count):
-    summary = {}
-    for item, count in floor_count.items():
-        summary[item] = get_production_rate(
-            item, iron_production_rate, count * constr_on_floor[item]
-        )
-    return summary
+def get_number_with_color(number):
+    number_with_color = "["+str(number)+"]"
+    if number < 0:
+        return number_with_color+"{.red-text}"
+    if number > 0:
+        return number_with_color+"{.green-text}"
+    return number_with_color+"{.yellow-text}"
 
 
-def get_cons_summary(floor_count):
-    summary = {}
-    for item, count in floor_count.items():
-        summary[item] = get_cons_rate(item, iron_recipes, count * constr_on_floor[item])
-    return summary
+d = diff_c_p
+headers = ["Name", "Разница"]
+#Markdown(tabulate([(k.value,get_number_with_color(v))  for k,v in d.items()], headers = headers))  
+#Markdown(get_number_with_color(-12))
+```
 
 
-#prod_summary = get_prof_summary(iron_floor_count)
-#cons_summary = get_cons_summary(iron_floor_count)
+```{python}
+#| echo: false
+def show_recipe(recipe):
+    recipe_str = ""
+    for i in recipe:
+        recipe_str = recipe_str + " - "+i.value+ get_icon(i.value, Item_Type.Item)  +" x"+str(recipe[i])+"\n"
+    return recipe_str
 
+headers = ["Название", "Рецепт"]
+Markdown(tabulate([(k.value, show_recipe(v))  for k,v in recipes.items()], headers = headers))  
 
-def print_sum(summary):
-    print("\n".join("{}\t{}".format(k, v) for k, v in summary.items()))
-
-
-#print("PROD")
-#print_sum(prod_summary)
-
-#print("\nCONS")
-#print_sum(cons_summary)
-
-
-def get_prod_cons(item):
-    summary = {}
-    cons = get_cons_summary(iron_floor_count)
-    summary["Need"] = 0
-    for _, v in cons.items():
-        if item in v.keys():
-            summary["Need"] += v[item]
-    summary["Production"] = (
-        constr_on_floor[item] * iron_floor_count[item] * iron_production_rate[item]
-    )
-    summary["Consumption"] = dict(
-        (k, constr_on_floor[item] * iron_floor_count[item] * v)
-        for k, v in iron_recipes[item].items()
-    )
-    summary["Available"] = summary["Production"] - summary["Need"]
-    return summary
-
-
-def get_item_info(item):
-    print("\n {}".format(item))
-    print_sum(get_prod_cons(item))
-
-
-#get_item_info("iron_rod")
-#get_item_info("iron_plate")
-#get_item_info("reinforced_iron_plate")
-#get_item_info("modular_frame")
-
+#show_recipe(recipes[Item.Automated_wiring])
 ```
