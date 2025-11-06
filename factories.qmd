@@ -20,6 +20,14 @@ def get_icon(name, item_type):
 def get_item_name_with_icon(name, item_type):
     return name+" " +get_icon(name, item_type)
 
+def get_number_with_color(number):
+    number_with_color = "["+str(number)+"]"
+    if number < 0:
+        return number_with_color+"{.red-text}"
+    if number > 0:
+        return number_with_color+"{.green-text}"
+    return number_with_color+"{.yellow-text}"
+
 class Item(Enum):
     Iron_ingot = "Iron Ingot"
     Copper_ingot = "Copper Ingot"
@@ -90,13 +98,20 @@ recipes = {
 
 ```
 
-## MegaFactory
+# MegaFactory
 
-## Заводы стоят на производство такого колличества:
+## Вход
+
+```{python}
+```
+
+## Схема завода
+
+![](./icons/Diagrams/MegaFactory.png)
 
 ```{python}
 #| echo: false
-
+# production setup
 production_on_floor = {
     Item.Iron_rod: 4,
     Item.Iron_plate: 4,
@@ -130,6 +145,13 @@ production_floors = {
     Item.Automated_wiring: 1,
     Item.Motor: 1
 }
+```
+
+
+## Что производится
+
+```{python}
+#| echo: false
 
 def get_production_rates(on_floor, floors):
     production_rates = {}
@@ -137,22 +159,10 @@ def get_production_rates(on_floor, floors):
         production_rates[item] = on_floor[item]*floors[item]*production_rate[item]
     return production_rates
 
-
-def show_production_rates(production_rates):
-    summary = ""
-    for item in production_rates:
-        summary = summary + item.value +": " + str(production_rates[item])+"\n\n"
-    return summary
-
-```
-
-```{python}
-#| echo: false
-#| output: asis
-
 production_rates = get_production_rates(production_on_floor, production_floors)
 
-#print(show_production_rates(production_rates))
+
+
 ```
 
 ```{python}
@@ -169,22 +179,6 @@ def consumption_rate(production_on_floor, production_floors):
     for item in production_on_floor:
         cons_rates[item] = item_consumption_rate(item, production_on_floor[item]*production_floors[item])
     return cons_rates
-
-def show_recipe(recipe):
-    summary = ""
-    for i in recipe:
-        summary = summary + " " + i.value +": "+ str(recipe[i]) + " "
-    return summary
-
-def show_cons_rate(cons_rates):
-    summary = ""
-    for i in cons_rates:
-        summary = summary + "**"+i.value +"**"+ "| " + show_recipe(cons_rates[i]) + "\n\n"
-    return summary
-
-cons_rate = consumption_rate(production_on_floor, production_floors)
-
-#print(show_cons_rate(cons_rate))
 ```
 
 ```{python}
@@ -195,14 +189,14 @@ def show_recipe(recipe):
         recipe_str = recipe_str + " - "+i.value+ get_icon(i.value, Item_Type.Item)  +" x"+str(recipe[i])+"\n"
     return recipe_str
 
+cons_rate = consumption_rate(production_on_floor, production_floors)
 headers = ["Название", "Потребляемые ресурсы"]
 Markdown(tabulate([("**"+get_item_name_with_icon(k.value, Item_Type.Item)+" x"+ str(production_rates[k])+"**", show_recipe(v))  for k,v in cons_rate.items()], headers = headers))  
 
-#show_recipe(recipes[Item.Automated_wiring])
 ```
 
 
-## Разница потребления и производства
+## Выход
 
 ```{python}
 #| echo: false
@@ -217,41 +211,9 @@ def diff_cons_prod(prod_rate, cons_rate):
             diff_cons_prod_rate[item] -= cons_rate[cons_item][item]
     return diff_cons_prod_rate
 
-
 diff_c_p  = diff_cons_prod(production_rates,cons_rate)
-```
-
-```{python}
-#| echo: false
-#| output: asis
-def show_diff(diff):
-    summary = ""
-    for i in diff:
-        summary = summary + "**"+i.value+"**: "+str(diff[i])+"\n\n"
-    return summary
-
-import pandas as pd
-
-#f = pd.DataFrame.from_dict(diff_c_p, orient='index', columns=["name"])
-#print(df.to_markdown(index=False))
-#print(show_diff(diff_c_p))
-```
-
-```{python}
-#| echo: false
-def get_number_with_color(number):
-    number_with_color = "["+str(number)+"]"
-    if number < 0:
-        return number_with_color+"{.red-text}"
-    if number > 0:
-        return number_with_color+"{.green-text}"
-    return number_with_color+"{.yellow-text}"
-
-
-d = diff_c_p
 headers = ["Название", "Разница"]
-Markdown(tabulate([("**"+get_item_name_with_icon(k.value, Item_Type.Item)+"**",get_number_with_color(v))  for k,v in d.items()], headers = headers))  
-#Markdown(get_number_with_color(-12))
+Markdown(tabulate([("**"+get_item_name_with_icon(k.value, Item_Type.Item)+"**",get_number_with_color(v))  for k,v in diff_c_p.items()], headers = headers))  
 ```
 
 

@@ -4,7 +4,6 @@ project:
 website:
   title: ""
   navbar:
-    theme: solar
     left:
       - href: index.qmd
         text: ПыПецПром
