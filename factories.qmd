@@ -84,7 +84,7 @@ recipes = {
     Item.Iron_plate: {Item.Iron_ingot:30},
     Item.Screws: {Item.Iron_rod:10},
     Item.Reinforced_iron_plate: {Item.Iron_plate: 30, Item.Screws:60},
-    Item.Rotor: {Item.Iron_plate: 20, Item.Screws:100},
+    Item.Rotor: {Item.Iron_rod: 20, Item.Screws:100},
     Item.Modular_frame: {Item.Reinforced_iron_plate:3, Item.Iron_rod:12},
     Item.Steel_beam: {Item.Steel_ingot: 60},
     Item.Steel_pipe: {Item.Steel_ingot: 30},
@@ -130,9 +130,9 @@ production_on_floor = {
 }
 
 production_floors = {
-    Item.Iron_rod: 7,
+    Item.Iron_rod: 11, #7,
     Item.Iron_plate: 5,
-    Item.Steel_beam: 2,
+    Item.Steel_beam: 4,
     Item.Steel_pipe: 2,
     Item.Encased_industrial_beam: 1,
     Item.Screws: 8,

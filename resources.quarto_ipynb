@@ -1,0 +1,223 @@
+{
+  "cells": [
+    {
+      "cell_type": "raw",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Ресурсы\"\n",
+        "filters: [remove_title.lua]\n",
+        "---"
+      ],
+      "id": "c923d578"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "from enum import Enum\n",
+        "\n",
+        "class Item_Type(Enum):\n",
+        "    Resource =  \"Resources\"\n",
+        "    Item = \"Items\"\n",
+        "\n",
+        "class Node_Type(Enum):\n",
+        "    Limestone = \"Limestone\"\n",
+        "    Iron = \"Iron\"\n",
+        "    Copper = \"Copper\"\n",
+        "    Coal = \"Coal\"\n",
+        "    Caterium = \"Caterium\"\n",
+        "    SAM = \"SAM\"\n",
+        "    Quartz = \"Quartz\"\n",
+        "\n",
+        "class Purity_Type(Enum):\n",
+        "    Impure = 0.5\n",
+        "    Normal = 1\n",
+        "    Pure = 2\n",
+        "\n",
+        "class Miner_Type(Enum):\n",
+        "    Mk1 = 1\n",
+        "    Mk2 = 2\n",
+        "    Mk3 = 4\n",
+        "\n",
+        "BASE_MINING_SPEED = 60"
+      ],
+      "id": "ce232a60",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "# global page\n",
+        "ICON_SIZE = 32\n",
+        "\n",
+        "def get_icon(name, item_type):\n",
+        "    expr = f\"![](./icons/{item_type}/{name}.png){{width={ICON_SIZE}}}\"\n",
+        "    return expr"
+      ],
+      "id": "fae1cdc0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Добыча ресурсов\n"
+      ],
+      "id": "84aa1697"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "def get_node(node_type, purity, count):\n",
+        "    node = {\n",
+        "        \"Node type\": node_type,\n",
+        "        \"Purity\": purity,\n",
+        "        \"Count\": count\n",
+        "    }\n",
+        "    return node\n",
+        "\n",
+        "def add_resource_node(resource_nodes, new_resource_node):\n",
+        "    resource_nodes.append(new_resource_node)\n",
+        "    return resource_nodes\n",
+        "\n",
+        "def add_resource_nodes(resource_nodes, new_resource_nodes):\n",
+        "    for node in new_resource_nodes:\n",
+        "        add_resource_node(resource_nodes, node)\n",
+        "    return resource_nodes"
+      ],
+      "id": "cc076175",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "def get_extraction_place(name, resource_nodes):\n",
+        "    return { name: resource_nodes }\n",
+        "\n",
+        "def get_extraction_places(places):\n",
+        "    merged_places = {}\n",
+        "    for place in places:\n",
+        "        merged_places = merged_places | place\n",
+        "    return merged_places\n",
+        "\n",
+        "extr_places = get_extraction_places( \n",
+        "    [get_extraction_place(\"Body Dump\", [\n",
+        "        get_node(Node_Type.Iron, Purity_Type.Normal, 6),\n",
+        "        get_node(Node_Type.Limestone, Purity_Type.Normal, 1)\n",
+        "        ]\n",
+        "    ),\n",
+        "    get_extraction_place(\"Mushroom Beach\", [\n",
+        "        get_node(Node_Type.Limestone, Purity_Type.Normal, 1)\n",
+        "        ]\n",
+        "    ),\n",
+        "    get_extraction_place(\"Copperfield\", [\n",
+        "        get_node(Node_Type.Copper, Purity_Type.Normal, 2)\n",
+        "        ]\n",
+        "    ),\n",
+        "    get_extraction_place(\"Barbieland\", [\n",
+        "        get_node(Node_Type.Copper, Purity_Type.Pure, 4)\n",
+        "        ]\n",
+        "    ),\n",
+        "    get_extraction_place(\"Dunbass\", [\n",
+        "        get_node(Node_Type.Coal, Purity_Type.Normal, 2),\n",
+        "        get_node(Node_Type.Coal, Purity_Type.Impure, 2)\n",
+        "        ]\n",
+        "    ),\n",
+        "    get_extraction_place(\"Golden Rock\", [\n",
+        "        get_node(Node_Type.Caterium, Purity_Type.Pure, 2)\n",
+        "        ]\n",
+        "    ),\n",
+        "    get_extraction_place(\"Shitcoal Lake\", [\n",
+        "        get_node(Node_Type.Coal, Purity_Type.Normal, 2)\n",
+        "        ]\n",
+        "    ),\n",
+        "    get_extraction_place(\"Bluedick Cave\", [\n",
+        "        get_node(Node_Type.Quartz, Purity_Type.Pure, 2),\n",
+        "        get_node(Node_Type.SAM, Purity_Type.Normal, 1)\n",
+        "        ]\n",
+        "    ),\n",
+        "    get_extraction_place(\"Steal Stream\", [\n",
+        "        get_node(Node_Type.Iron, Purity_Type.Pure, 3)\n",
+        "        ]\n",
+        "    ),\n",
+        "    get_extraction_place(\"Steal Lake\", [\n",
+        "        get_node(Node_Type.Coal, Purity_Type.Pure, 3)\n",
+        "        ]\n",
+        "    )])"
+      ],
+      "id": "a68cfd9e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "def node_summary(node):\n",
+        "    summary =  node['Node type'].name+ \" \" \n",
+        "    summary = summary + get_icon(node['Node type'].name, Item_Type.Resource.value) +\" \"+ node[\"Purity\"].name + \" x\"\n",
+        "    summary = summary + str(node[\"Count\"])\n",
+        "    return summary\n",
+        "\n",
+        "def nodes_summary(nodes, begin_with = \"\"):\n",
+        "    summary = begin_with\n",
+        "    for node in nodes:\n",
+        "        summary = summary + node_summary(node) +\"\\n\\n\"\n",
+        "    return summary\n",
+        "\n",
+        "def places_summary(places):\n",
+        "    summary = \"\"\n",
+        "    for place in places:\n",
+        "        summary = summary + \"### \" + place + \"\\n\\n\"\n",
+        "        summary = summary + nodes_summary(places[place])\n",
+        "\n",
+        "    return summary"
+      ],
+      "id": "830bc0fa",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Занятые жилы"
+      ],
+      "id": "cc37513c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "#| output: asis\n",
+        "print(places_summary(extr_places))"
+      ],
+      "id": "eb1db4ad",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\burov\\AppData\\Local\\Python\\pythoncore-3.14-64\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

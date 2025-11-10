@@ -7,5 +7,4 @@ filters: [remove_title.lua]
 
 ```{python}
 
-
 ```
