@@ -8,7 +8,7 @@ website:
       - href: index.qmd
         text: ПыПецПром
       - resources.qmd
-      - factories.qmd
+      - fact.qmd
 
 format:
   html:
