@@ -21,69 +21,6 @@
     "text": "Название\nПотребляемые ресурсы\n\n\n\n\nIron Rod  x660\n- Iron Ingot x660\n\n\nIron Plate  x400\n- Iron Ingot x600\n\n\nSteel Beam  x240\n- Steel Ingot x960\n\n\nSteel Pipe  x160\n- Steel Ingot x240\n\n\nEncased Industrial Beam  x24\n- Steel Beam x72\n\n\n\n- Concrete x144\n\n\nScrews  x1280\n- Iron Rod x320\n\n\nReinforced Iron Plate  x40\n- Iron Plate x240\n\n\n\n- Screws x480\n\n\nSmart Plating  x8\n- Reinforced Iron Plate x8\n\n\n\n- Rotor x8\n\n\nStator  x40\n- Steel Pipe x120\n\n\n\n- Wire x320\n\n\nRotor  x32\n- Iron Rod x160\n\n\n\n- Screws x800\n\n\nModular Frame  x16\n- Reinforced Iron Plate x24\n\n\n\n- Iron Rod x96\n\n\nVersatile Framework  x20\n- Modular Frame x10.0\n\n\n\n- Steel Beam x120\n\n\nAutomated Wiring  x10.0\n- Stator x10.0\n\n\n\n- Cable x200\n\n\nMotor  x20\n- Stator x20\n\n\n\n- Rotor x20\n\n\n\n\n\n\n\n\n\n\n\n\n\nНазвание\nРазница\n\n\n\n\nIron Rod \n84\n\n\nIron Plate \n160\n\n\nSteel Beam \n48\n\n\nSteel Pipe \n40\n\n\nEncased Industrial Beam \n24\n\n\nScrews \n0\n\n\nReinforced Iron Plate \n8\n\n\nSmart Plating \n8\n\n\nStator \n10.0\n\n\nRotor \n4\n\n\nModular Frame \n6.0\n\n\nVersatile Framework \n20\n\n\nAutomated Wiring \n10.0\n\n\nMotor \n20\n\n\nIron Ingot \n-1260\n\n\nSteel Ingot \n-1200\n\n\nConcrete \n-144\n\n\nWire \n-320\n\n\nCable \n-200"
   },
   {
-    "objectID": "factories.html#megafactory",
-    "href": "factories.html#megafactory",
-    "title": "",
-    "section": "",
-    "text": "Iron rod: 360\nIron plate: 240\nScrews: 640\nReinforced iron plate: 40\nRotor: 16\nModular frame: 8"
-  },
-  {
-    "objectID": "Factories.html",
-    "href": "Factories.html",
-    "title": "MegaFactory",
-    "section": "",
-    "text": "Название\nПотребляемые ресурсы\n\n\n\n\nIron Rod  x420\n- Iron Ingot x420\n\n\nIron Plate  x400\n- Iron Ingot x600\n\n\nSteel Beam  x120\n- Steel Ingot x480\n\n\nSteel Pipe  x160\n- Steel Ingot x240\n\n\nEncased Industrial Beam  x24\n- Steel Beam x72\n\n\n\n- Concrete x144\n\n\nScrews  x1280\n- Iron Rod x320\n\n\nReinforced Iron Plate  x40\n- Iron Plate x240\n\n\n\n- Screws x480\n\n\nSmart Plating  x8\n- Reinforced Iron Plate x8\n\n\n\n- Rotor x8\n\n\nStator  x40\n- Steel Pipe x120\n\n\n\n- Wire x320\n\n\nRotor  x32\n- Iron Plate x160\n\n\n\n- Screws x800\n\n\nModular Frame  x16\n- Reinforced Iron Plate x24\n\n\n\n- Iron Rod x96\n\n\nVersatile Framework  x20\n- Modular Frame x10.0\n\n\n\n- Steel Beam x120\n\n\nAutomated Wiring  x10.0\n- Stator x10.0\n\n\n\n- Cable x200\n\n\nMotor  x20\n- Stator x20\n\n\n\n- Rotor x20\n\n\n\n\n\n\n\n\n\n\n\n\n\nНазвание\nРазница\n\n\n\n\nIron Rod \n4\n\n\nIron Plate \n0\n\n\nSteel Beam \n-72\n\n\nSteel Pipe \n40\n\n\nEncased Industrial Beam \n24\n\n\nScrews \n0\n\n\nReinforced Iron Plate \n8\n\n\nSmart Plating \n8\n\n\nStator \n10.0\n\n\nRotor \n4\n\n\nModular Frame \n6.0\n\n\nVersatile Framework \n20\n\n\nAutomated Wiring \n10.0\n\n\nMotor \n20\n\n\nIron Ingot \n-1020\n\n\nSteel Ingot \n-720\n\n\nConcrete \n-144\n\n\nWire \n-320\n\n\nCable \n-200"
-  },
-  {
-    "objectID": "Factories.html#megafactory",
-    "href": "Factories.html#megafactory",
-    "title": "",
-    "section": "",
-    "text": "Iron rod: 360\nIron plate: 240\nSteel beam: 120\nSteel pipe: 160\nEncased industrial beam: 24\nScrews: 640\nReinforced iron plate: 20\nSmart plating: 8\nStator: 40\nRotor: 16\nModular frame: 16\nVersatile Framework: 20\nAutomated Wiring: 10.0\nMotor: 20\nIron rod| Iron ingot: 360\nIron plate| Iron ingot: 360\nSteel beam| Steel ingot: 480\nSteel pipe| Steel ingot: 240\nEncased industrial beam| Steel beam: 72 Concrete: 144\nScrews| Iron rod: 160\nReinforced iron plate| Iron plate: 120 Screws: 240\nSmart plating| Reinforced iron plate: 8 Rotor: 8\nStator| Steel pipe: 120 Wire: 320\nRotor| Iron plate: 80 Screws: 400\nModular frame| Reinforced iron plate: 24 Iron rod: 96\nVersatile Framework| Modular frame: 10.0 Steel beam: 120\nAutomated Wiring| Stator: 10.0 Cable: 200\nMotor| Stator: 20 Rotor: 20"
-  },
-  {
-    "objectID": "Factories.html#заводы-стоят-на-производство-такого-колличества",
-    "href": "Factories.html#заводы-стоят-на-производство-такого-колличества",
-    "title": "",
-    "section": "Заводы стоят на производство такого колличества:",
-    "text": "Заводы стоят на производство такого колличества:\n\n\n\n\n\nНазвание\nПотребляемые ресурсы\n\n\n\n\nIron Rod  x420\n- Iron Ingot x420\n\n\nIron Plate  x400\n- Iron Ingot x600\n\n\nSteel Beam  x120\n- Steel Ingot x480\n\n\nSteel Pipe  x160\n- Steel Ingot x240\n\n\nEncased Industrial Beam  x24\n- Steel Beam x72\n\n\n\n- Concrete x144\n\n\nScrews  x1280\n- Iron Rod x320\n\n\nReinforced Iron Plate  x40\n- Iron Plate x240\n\n\n\n- Screws x480\n\n\nSmart Plating  x8\n- Reinforced Iron Plate x8\n\n\n\n- Rotor x8\n\n\nStator  x40\n- Steel Pipe x120\n\n\n\n- Wire x320\n\n\nRotor  x32\n- Iron Plate x160\n\n\n\n- Screws x800\n\n\nModular Frame  x16\n- Reinforced Iron Plate x24\n\n\n\n- Iron Rod x96\n\n\nVersatile Framework  x20\n- Modular Frame x10.0\n\n\n\n- Steel Beam x120\n\n\nAutomated Wiring  x10.0\n- Stator x10.0\n\n\n\n- Cable x200\n\n\nMotor  x20\n- Stator x20\n\n\n\n- Rotor x20"
-  },
-  {
-    "objectID": "Factories.html#в-каких-количествах-потребляется",
-    "href": "Factories.html#в-каких-количествах-потребляется",
-    "title": "",
-    "section": "В каких количествах потребляется:",
-    "text": "В каких количествах потребляется:\n\n\n\n\n\nНазвание\nРецепт\n\n\n\n\nIron Rod\n- Iron Ingot x420\n\n\nIron Plate\n- Iron Ingot x600\n\n\nSteel Beam\n- Steel Ingot x480\n\n\nSteel Pipe\n- Steel Ingot x240\n\n\nEncased Industrial Beam\n- Steel Beam x72\n\n\n\n- Concrete x144\n\n\nScrews\n- Iron Rod x320\n\n\nReinforced Iron Plate\n- Iron Plate x240\n\n\n\n- Screws x480\n\n\nSmart Plating\n- Reinforced Iron Plate x8\n\n\n\n- Rotor x8\n\n\nStator\n- Steel Pipe x120\n\n\n\n- Wire x320\n\n\nRotor\n- Iron Plate x160\n\n\n\n- Screws x800\n\n\nModular Frame\n- Reinforced Iron Plate x24\n\n\n\n- Iron Rod x96\n\n\nVersatile Framework\n- Modular Frame x10.0\n\n\n\n- Steel Beam x120\n\n\nAutomated Wiring\n- Stator x10.0\n\n\n\n- Cable x200\n\n\nMotor\n- Stator x20\n\n\n\n- Rotor x20"
-  },
-  {
-    "objectID": "Factories.html#разница-потребления-и-производства",
-    "href": "Factories.html#разница-потребления-и-производства",
-    "title": "MegaFactory",
-    "section": "",
-    "text": "Название\nРазница\n\n\n\n\nIron Rod \n4\n\n\nIron Plate \n0\n\n\nSteel Beam \n-72\n\n\nSteel Pipe \n40\n\n\nEncased Industrial Beam \n24\n\n\nScrews \n0\n\n\nReinforced Iron Plate \n8\n\n\nSmart Plating \n8\n\n\nStator \n10.0\n\n\nRotor \n4\n\n\nModular Frame \n6.0\n\n\nVersatile Framework \n20\n\n\nAutomated Wiring \n10.0\n\n\nMotor \n20\n\n\nIron Ingot \n-1020\n\n\nSteel Ingot \n-720\n\n\nConcrete \n-144\n\n\nWire \n-320\n\n\nCable \n-200"
-  },
-  {
-    "objectID": "Factories.html#что-производится",
-    "href": "Factories.html#что-производится",
-    "title": "MegaFactory",
-    "section": "",
-    "text": "Название\nПотребляемые ресурсы\n\n\n\n\nIron Rod  x420\n- Iron Ingot x420\n\n\nIron Plate  x400\n- Iron Ingot x600\n\n\nSteel Beam  x120\n- Steel Ingot x480\n\n\nSteel Pipe  x160\n- Steel Ingot x240\n\n\nEncased Industrial Beam  x24\n- Steel Beam x72\n\n\n\n- Concrete x144\n\n\nScrews  x1280\n- Iron Rod x320\n\n\nReinforced Iron Plate  x40\n- Iron Plate x240\n\n\n\n- Screws x480\n\n\nSmart Plating  x8\n- Reinforced Iron Plate x8\n\n\n\n- Rotor x8\n\n\nStator  x40\n- Steel Pipe x120\n\n\n\n- Wire x320\n\n\nRotor  x32\n- Iron Plate x160\n\n\n\n- Screws x800\n\n\nModular Frame  x16\n- Reinforced Iron Plate x24\n\n\n\n- Iron Rod x96\n\n\nVersatile Framework  x20\n- Modular Frame x10.0\n\n\n\n- Steel Beam x120\n\n\nAutomated Wiring  x10.0\n- Stator x10.0\n\n\n\n- Cable x200\n\n\nMotor  x20\n- Stator x20\n\n\n\n- Rotor x20"
-  },
-  {
-    "objectID": "Factories.html#схема-завода",
-    "href": "Factories.html#схема-завода",
-    "title": "MegaFactory",
-    "section": "",
-    "text": "from diagrams import Diagram, Cluster\nfrom diagrams.custom import Custom\n\n\nwith Diagram(\"Cu\", show=False, filename=\"custom_local\", direction=\"LR\"):\n  cc_sa = Custom(\"Adaprms\", r\"icons\\Resources\\Iron.png\")\n  cc_nd = Custom(\"No \", r\"icons\\Resources\\SAM.png\")\n#  cc_zero = Custom(\"Public \", r\"icons\\Resources\\Limestone.png\")\n\n  cc_sa &gt;&gt; cc_nd\n # cc_sa &gt;&gt; cc_zero"
-  },
-  {
-    "objectID": "Factories.html#выход",
-    "href": "Factories.html#выход",
-    "title": "MegaFactory",
-    "section": "",
-    "text": "Название\nРазница\n\n\n\n\nIron Rod \n4\n\n\nIron Plate \n0\n\n\nSteel Beam \n-72\n\n\nSteel Pipe \n40\n\n\nEncased Industrial Beam \n24\n\n\nScrews \n0\n\n\nReinforced Iron Plate \n8\n\n\nSmart Plating \n8\n\n\nStator \n10.0\n\n\nRotor \n4\n\n\nModular Frame \n6.0\n\n\nVersatile Framework \n20\n\n\nAutomated Wiring \n10.0\n\n\nMotor \n20\n\n\nIron Ingot \n-1020\n\n\nSteel Ingot \n-720\n\n\nConcrete \n-144\n\n\nWire \n-320\n\n\nCable \n-200"
-  },
-  {
     "objectID": "factories.html#что-производится",
     "href": "factories.html#что-производится",
     "title": "MegaFactory",

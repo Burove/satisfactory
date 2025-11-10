@@ -1,18 +1,11 @@
 {
   "index.qmd": {
-    "index.html": "d00dca03"
-  },
-  "about.qmd": {
-    "about.html": "83aff700"
-  },
-  "resources.qmd": {
-    "resources.html": "e5b8db46",
-    "resources.docx": "deedc507"
+    "index.html": "ddf93a98"
   },
   "factories.qmd": {
-    "factories.html": "5ca9dd57"
+    "factories.html": "a759e6a7"
   },
-  "Factories.qmd": {
-    "Factories.html": "f1d436a0"
+  "resources.qmd": {
+    "resources.html": "7b03d9b7"
   }
 }
