@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "b9888f62",
+   "id": "711bb5d5",
    "metadata": {},
    "source": [
     "---\n",
@@ -14,7 +14,7 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "18b1ebbb",
+   "id": "a88508eb",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -63,6 +63,7 @@
     "    Versatile_framework = \"Versatile Framework\"\n",
     "    Automated_wiring = \"Automated Wiring\"\n",
     "    Motor = \"Motor\"\n",
+    "    Heavy_Modular_Frame = \"Heavy Modular Frame\"\n",
     "\n",
     "production_rate = {\n",
     "    Item.Iron_ingot : 30,\n",
@@ -85,6 +86,7 @@
     "    Item.Versatile_framework : 5,\n",
     "    Item.Automated_wiring : 2.5,\n",
     "    Item.Motor : 10,\n",
+    "    Item.Heavy_Modular_Frame: 2,\n",
     "}\n",
     "\n",
     "\n",
@@ -107,13 +109,14 @@
     "    Item.Smart_plating: {Item.Reinforced_iron_plate: 2, Item.Rotor: 2},\n",
     "    Item.Versatile_framework: {Item.Modular_frame: 2.5, Item.Steel_beam: 30},\n",
     "    Item.Automated_wiring: {Item.Stator: 2.5, Item.Cable: 50},\n",
-    "    Item.Motor: {Item.Stator: 10, Item.Rotor: 10}\n",
+    "    Item.Motor: {Item.Stator: 10, Item.Rotor: 10},\n",
+    "    Item.Heavy_Modular_Frame: {Item.Modular_frame: 10, Item.Steel_pipe: 40, Item.Encased_industrial_beam: 10, Item.Screws: 240},\n",
     "}"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "7bf632e4",
+   "id": "546ffd60",
    "metadata": {},
    "source": [
     "# MegaFactory\n",
@@ -123,7 +126,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "38e6d30b",
+   "id": "e63bebe3",
    "metadata": {},
    "source": [
     "## Схема завода\n",
@@ -134,7 +137,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "83e09b64",
+   "id": "6e144970",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -154,11 +157,12 @@
     "    Item.Modular_frame: 4,\n",
     "    Item.Versatile_framework: 4,\n",
     "    Item.Automated_wiring: 4,\n",
-    "    Item.Motor: 2\n",
+    "    Item.Motor: 2,\n",
+    "    Item.Heavy_Modular_Frame: 2\n",
     "}\n",
     "\n",
     "production_floors = {\n",
-    "    Item.Iron_rod: 11, #7,\n",
+    "    Item.Iron_rod: 7,\n",
     "    Item.Iron_plate: 5,\n",
     "    Item.Steel_beam: 4,\n",
     "    Item.Steel_pipe: 2,\n",
@@ -171,13 +175,14 @@
     "    Item.Modular_frame: 2,\n",
     "    Item.Versatile_framework: 1,\n",
     "    Item.Automated_wiring: 1,\n",
-    "    Item.Motor: 1\n",
+    "    Item.Motor: 1,\n",
+    "    Item.Heavy_Modular_Frame: 2\n",
     "}"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "f8364c30",
+   "id": "aa25d439",
    "metadata": {},
    "source": [
     "## Что производится"
@@ -186,7 +191,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "e5637607",
+   "id": "fdca7379",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -204,7 +209,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "9f7a35e7",
+   "id": "8c01e409",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -226,15 +231,15 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "7d003323",
+   "id": "91b5e0f3",
    "metadata": {},
    "outputs": [
     {
      "data": {
       "text/markdown": [
        "Название                                                                                  Потребляемые ресурсы\n",
-       "----------------------------------------------------------------------------------------  ---------------------------------------------------------------------------------\n",
-       "**Iron Rod ![](./icons/Items/Iron Rod.png){width=32} x660**                               - Iron Ingot![](./icons/Items/Iron Ingot.png){width=32} x660\n",
+       "----------------------------------------------------------------------------------------  --------------------------------------------------------------------------------------\n",
+       "**Iron Rod ![](./icons/Items/Iron Rod.png){width=32} x420**                               - Iron Ingot![](./icons/Items/Iron Ingot.png){width=32} x420\n",
        "**Iron Plate ![](./icons/Items/Iron Plate.png){width=32} x400**                           - Iron Ingot![](./icons/Items/Iron Ingot.png){width=32} x600\n",
        "**Steel Beam ![](./icons/Items/Steel Beam.png){width=32} x240**                           - Steel Ingot![](./icons/Items/Steel Ingot.png){width=32} x960\n",
        "**Steel Pipe ![](./icons/Items/Steel Pipe.png){width=32} x160**                           - Steel Ingot![](./icons/Items/Steel Ingot.png){width=32} x240\n",
@@ -256,7 +261,11 @@
        "**Automated Wiring ![](./icons/Items/Automated Wiring.png){width=32} x10.0**              - Stator![](./icons/Items/Stator.png){width=32} x10.0\n",
        "                                                                                           - Cable![](./icons/Items/Cable.png){width=32} x200\n",
        "**Motor ![](./icons/Items/Motor.png){width=32} x20**                                      - Stator![](./icons/Items/Stator.png){width=32} x20\n",
-       "                                                                                           - Rotor![](./icons/Items/Rotor.png){width=32} x20"
+       "                                                                                           - Rotor![](./icons/Items/Rotor.png){width=32} x20\n",
+       "**Heavy Modular Frame ![](./icons/Items/Heavy Modular Frame.png){width=32} x8**           - Modular Frame![](./icons/Items/Modular Frame.png){width=32} x40\n",
+       "                                                                                           - Steel Pipe![](./icons/Items/Steel Pipe.png){width=32} x160\n",
+       "                                                                                           - Encased Industrial Beam![](./icons/Items/Encased Industrial Beam.png){width=32} x40\n",
+       "                                                                                           - Screws![](./icons/Items/Screws.png){width=32} x960"
       ],
       "text/plain": [
        "<IPython.core.display.Markdown object>"
@@ -282,7 +291,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c954ee8c",
+   "id": "67e319ce",
    "metadata": {},
    "source": [
     "## Выход"
@@ -291,7 +300,7 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "cb89a39b",
+   "id": "94462f12",
    "metadata": {},
    "outputs": [
     {
@@ -299,21 +308,22 @@
       "text/markdown": [
        "Название                                                                              Разница\n",
        "------------------------------------------------------------------------------------  -------------------\n",
-       "**Iron Rod ![](./icons/Items/Iron Rod.png){width=32}**                                [84]{.green-text}\n",
+       "**Iron Rod ![](./icons/Items/Iron Rod.png){width=32}**                                [-156]{.red-text}\n",
        "**Iron Plate ![](./icons/Items/Iron Plate.png){width=32}**                            [160]{.green-text}\n",
        "**Steel Beam ![](./icons/Items/Steel Beam.png){width=32}**                            [48]{.green-text}\n",
-       "**Steel Pipe ![](./icons/Items/Steel Pipe.png){width=32}**                            [40]{.green-text}\n",
-       "**Encased Industrial Beam ![](./icons/Items/Encased Industrial Beam.png){width=32}**  [24]{.green-text}\n",
-       "**Screws ![](./icons/Items/Screws.png){width=32}**                                    [0]{.yellow-text}\n",
+       "**Steel Pipe ![](./icons/Items/Steel Pipe.png){width=32}**                            [-120]{.red-text}\n",
+       "**Encased Industrial Beam ![](./icons/Items/Encased Industrial Beam.png){width=32}**  [-16]{.red-text}\n",
+       "**Screws ![](./icons/Items/Screws.png){width=32}**                                    [-960]{.red-text}\n",
        "**Reinforced Iron Plate ![](./icons/Items/Reinforced Iron Plate.png){width=32}**      [8]{.green-text}\n",
        "**Smart Plating ![](./icons/Items/Smart Plating.png){width=32}**                      [8]{.green-text}\n",
        "**Stator ![](./icons/Items/Stator.png){width=32}**                                    [10.0]{.green-text}\n",
        "**Rotor ![](./icons/Items/Rotor.png){width=32}**                                      [4]{.green-text}\n",
-       "**Modular Frame ![](./icons/Items/Modular Frame.png){width=32}**                      [6.0]{.green-text}\n",
+       "**Modular Frame ![](./icons/Items/Modular Frame.png){width=32}**                      [-34.0]{.red-text}\n",
        "**Versatile Framework ![](./icons/Items/Versatile Framework.png){width=32}**          [20]{.green-text}\n",
        "**Automated Wiring ![](./icons/Items/Automated Wiring.png){width=32}**                [10.0]{.green-text}\n",
        "**Motor ![](./icons/Items/Motor.png){width=32}**                                      [20]{.green-text}\n",
-       "**Iron Ingot ![](./icons/Items/Iron Ingot.png){width=32}**                            [-1260]{.red-text}\n",
+       "**Heavy Modular Frame ![](./icons/Items/Heavy Modular Frame.png){width=32}**          [8]{.green-text}\n",
+       "**Iron Ingot ![](./icons/Items/Iron Ingot.png){width=32}**                            [-1020]{.red-text}\n",
        "**Steel Ingot ![](./icons/Items/Steel Ingot.png){width=32}**                          [-1200]{.red-text}\n",
        "**Concrete ![](./icons/Items/Concrete.png){width=32}**                                [-144]{.red-text}\n",
        "**Wire ![](./icons/Items/Wire.png){width=32}**                                        [-320]{.red-text}\n",

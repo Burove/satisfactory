@@ -49,6 +49,7 @@ class Item(Enum):
     Versatile_framework = "Versatile Framework"
     Automated_wiring = "Automated Wiring"
     Motor = "Motor"
+    Heavy_Modular_Frame = "Heavy Modular Frame"
 
 production_rate = {
     Item.Iron_ingot : 30,
@@ -71,6 +72,7 @@ production_rate = {
     Item.Versatile_framework : 5,
     Item.Automated_wiring : 2.5,
     Item.Motor : 10,
+    Item.Heavy_Modular_Frame: 2,
 }
 
 
@@ -93,7 +95,8 @@ recipes = {
     Item.Smart_plating: {Item.Reinforced_iron_plate: 2, Item.Rotor: 2},
     Item.Versatile_framework: {Item.Modular_frame: 2.5, Item.Steel_beam: 30},
     Item.Automated_wiring: {Item.Stator: 2.5, Item.Cable: 50},
-    Item.Motor: {Item.Stator: 10, Item.Rotor: 10}
+    Item.Motor: {Item.Stator: 10, Item.Rotor: 10},
+    Item.Heavy_Modular_Frame: {Item.Modular_frame: 10, Item.Steel_pipe: 40, Item.Encased_industrial_beam: 10, Item.Screws: 240},
 }
 
 ```
@@ -126,11 +129,12 @@ production_on_floor = {
     Item.Modular_frame: 4,
     Item.Versatile_framework: 4,
     Item.Automated_wiring: 4,
-    Item.Motor: 2
+    Item.Motor: 2,
+    Item.Heavy_Modular_Frame: 2
 }
 
 production_floors = {
-    Item.Iron_rod: 11, #7,
+    Item.Iron_rod: 7,
     Item.Iron_plate: 5,
     Item.Steel_beam: 4,
     Item.Steel_pipe: 2,
@@ -143,7 +147,8 @@ production_floors = {
     Item.Modular_frame: 2,
     Item.Versatile_framework: 1,
     Item.Automated_wiring: 1,
-    Item.Motor: 1
+    Item.Motor: 1,
+    Item.Heavy_Modular_Frame: 2
 }
 ```
 
